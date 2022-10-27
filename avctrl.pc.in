@@ -1,0 +1,14 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
+
+Name: @PROJECT_AVCTRL_NAME@
+Description: @PROJECT_AVCTRL_DESCRIPTION@
+Version: @PROJECT_AVCTRL_VERSION@
+
+Requires: @PKGCONF_ALSA_REQ_PUB@
+Requires.private: @PKGCONF_ALSA_REQ_PRIV@
+Cflags: -I${includedir}
+Libs: -L${libdir} -lavctrl
+Libs.private: -L${libdir} -lavctrl @PKGCONF_LIBS_PRIV@
